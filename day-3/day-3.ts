@@ -30,10 +30,10 @@ function extractMulSequences(input: string) {
 
   for (const match of matches2) {
     if (match[0].includes("do()")) {
-      isSkipping = false; // Allow processing after do()
+      isSkipping = false;
       continue;
     } else if (match[0].includes("don't()")) {
-      isSkipping = true; // Disable processing after don't()
+      isSkipping = true;
       continue;
     }
 
@@ -42,7 +42,6 @@ function extractMulSequences(input: string) {
     }
   }
 
-  console.log(controlResult);
   return { result, controlResult };
 }
 
